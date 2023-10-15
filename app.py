@@ -74,7 +74,8 @@ def chat():
     st.write(initial_response)
     return jsonify({'response': initial_response})
 
-i_initial_response = llm_chain.run(user_query)
+i_temp_user_query-temp_user_query
+i_initial_response = llm_chain.run(i_temp_user_query)
 st.write("i_AI Response")
 st.write(i_initial_response)
 

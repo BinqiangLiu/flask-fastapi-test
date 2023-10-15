@@ -74,5 +74,9 @@ def chat():
     st.write(initial_response)
     return jsonify({'response': initial_response})
 
+i_initial_response = llm_chain.run(user_query)
+st.write("i_AI Response")
+st.write(i_initial_response)
+
 if __name__ == '__main__':    
     app.run(host='0.0.0.0', port=port)

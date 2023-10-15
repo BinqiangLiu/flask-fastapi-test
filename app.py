@@ -74,10 +74,11 @@ def chat():
     st.write(initial_response)
     return jsonify({'response': initial_response})
 
-i_temp_user_query-temp_user_query
-i_initial_response = llm_chain.run(i_temp_user_query)
-st.write("i_AI Response")
-st.write(i_initial_response)
+i_temp_user_query=temp_user_query
+if i_temp_user_query !="" and not i_temp_user_query.strip().isspace() and not i_temp_user_query == "" and not i_temp_user_query.strip() == "" and not i_temp_user_query.isspace():
+    i_initial_response = llm_chain.run(i_temp_user_query)
+    st.write("i_AI Response")
+    st.write(i_initial_response)
 
 if __name__ == '__main__':    
     app.run(host='0.0.0.0', port=port)

@@ -81,4 +81,5 @@ if i_temp_user_query !="" and not i_temp_user_query.strip().isspace() and not i_
     st.write(i_initial_response)
 
 if __name__ == '__main__':    
-    app.run(host='0.0.0.0', port=port)
+    #app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0')

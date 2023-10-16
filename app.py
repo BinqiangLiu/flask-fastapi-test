@@ -75,11 +75,17 @@ def chat():
     return jsonify({'response': initial_response})
 
 i_temp_user_query=temp_user_query
-if i_temp_user_query !="" and not i_temp_user_query.strip().isspace() and not i_temp_user_query == "" and not i_temp_user_query.strip() == "" and not i_temp_user_query.isspace():
-    i_initial_response = llm_chain.run(i_temp_user_query)
-    st.write("i_AI Response")
-    st.write(i_initial_response)
+try:
+    if i_temp_user_query !="" and not i_temp_user_query.strip().isspace() and not i_temp_user_query == "" and not i_temp_user_query.strip() == "" and not i_temp_user_query.isspace():
+        i_initial_response = llm_chain.run(i_temp_user_query)
+        st.write("i_AI Response")
+        st.write(i_initial_response)
+except Exception as e:
+        # Handle the error, e.g., print an error message or return a default text
+    print("No Query Input.")
+    st.write("No Query Input.")
+    st.stop()       
 
 if __name__ == '__main__':    
-    #app.run(host='0.0.0.0', port=port)
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=port)
+    #app.run(host='0.0.0.0')
